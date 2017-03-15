@@ -1,11 +1,14 @@
 "--------------- General Configuration -------------------------
 
 " Execute Installation of vim plugins
-execute pathogen#infect()
+"call pathogen#infect()
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
 
 " Allow syntax highlighting based on filetype
-filetype on
+filetype plugin indent on
 syntax on
+call pathogen#infect()
 
 " Adding a color column to set char limit
 set colorcolumn=81
@@ -57,8 +60,8 @@ nmap <leader>n :NERDTreeToggle<CR>
 nmap <leader>j :NERDTreeFind<CR>
 
 " Always open tree on boot, but don't focus
-autocmd VimEnter * NERDTree
-autocmd VimEnter * wincmd p
+"autocmd VimEnter * NERDTree
+"autocmd VimEnter * wincmd p
 
 " Don't display useles files in tree
 let NERDTreeIgnore=['\.DS_Store', '\~$', '\.swp']
